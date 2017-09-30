@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './variables';
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+//icons
+.fa-home {
+    font-size: $font-lg !important;
+    color: $darkred;
+}
+
+.boxsizing {
+    box-sizing: border-box;
+}
+
+ul {
+    word-wrap: break-word;
+}
+
+.nx-title {
+    color: $darkred;
+    font-weight: bold;
+    font-size: $font-title;
+}
+
+.nx-sub-title {
+    font-size: $font-md;
+    color: $black;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.nx-md-text {
+    color: $gray;
+    font-weight: bold;
+    font-size: $font-xs;
+}

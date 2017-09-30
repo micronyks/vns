@@ -1,0 +1,247 @@
+@import '../../../variables';
+:host {
+    width: 100%;
+    height: auto;
+    display: block;
+    left: 0;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.fa-mobile {
+    font-size: 22px;
+}
+
+.resume-container {
+    margin-top: 50px;
+    .curriculum-vitae {
+        color: $gray;
+        border-right: 1px solid $gray;
+    }
+    .resume-name {
+        color: $darkred;
+        font-weight: bold;
+    }
+    .resume-address {
+        color: $gray;
+    }
+    .mobile-section {
+        margin-top: 10px;
+        .resume-mobile {
+            color: $gray;
+        }
+        .resume-email {
+            color: $gray;
+        }
+    }
+    .container {
+        .panel {
+            .panel-title {
+                color: $darkred;
+                font-weight: bold;
+                font-size: $font-md;
+                border-bottom: 1px solid $gray;
+                margin: 10px 0;
+            }
+            .panel-body {
+                .panel-sub-title {
+                    color: $darkred;
+                    font-weight: bold;
+                    font-size: $font-xs;
+                    border-bottom: 1px dotted $gray;
+                    margin: 10px 0;
+                }
+                .panel-content {
+                    font-size: $font-sm;
+                    text-align: justify;
+                    margin: 10px 0;
+                    .panel-sub-content {
+                        margin-top: 5px;
+                        text-align: justify;
+                    }
+                    .company {
+                        font-size: $font-sm;
+                        color: $black;
+                        font-weight: bold;
+                    }
+                    .tenure,
+                    .degree {
+                        font-style: italic;
+                        font-size: $font-xs;
+                        font-weight: bold;
+                        color: $gray;
+                    }
+                    .college {
+                        color: $black;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (max-device-width: 767px) {
+    /* Styles */
+    .resume-container {
+        margin-top: 50px;
+        .curriculum-vitae {
+            text-align: center !important;
+        }
+        .resume-name {
+            text-align: center !important;
+        }
+        .resume-address {
+            text-align: center !important;
+        }
+        .mobile-section {
+            .resume-mobile {
+                text-align: center !important;
+            }
+            .resume-email {
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+
+/* Smartphones (landscape) ----------- */
+
+@media only screen and (min-width: 321px) {
+    /* Styles */
+}
+
+
+/* Smartphones (portrait) ----------- */
+
+@media only screen and (max-width: 320px) {
+    /* Styles */
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+}
+
+
+/* iPads (landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Styles */
+}
+
+
+/* iPads (portrait) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Styles */
+}
+
+
+/**********
+    iPad 3
+    **********/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}
+
+
+/* iPhone 4 ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* iPhone 5 ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* iPhone 6 ----------- */
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* iPhone 6+ ----------- */
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* Samsung Galaxy S3 ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+
+/* Samsung Galaxy S4 ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}
+
+
+/* Samsung Galaxy S5 ----------- */
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}

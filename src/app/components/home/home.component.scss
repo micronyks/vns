@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photodiv {
+    display: flex;
+    flex-direction: row;
+    // background: #00ff00 url("https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg") no-repeat fixed center;
+}
