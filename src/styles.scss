@@ -2,6 +2,7 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import './variables';
+@import './functions';
 html,
 body {
     margin: 0;
@@ -10,14 +11,18 @@ body {
     width: 100%;
 }
 
+.nxHeight {
+    height: 100%;
+}
+
 //icons
-.fa-home {
-    font-size: $font-lg !important;
-    color: $darkred;
+.fa {
+    font-size: $font-sm !important;
 }
 
 .boxsizing {
     box-sizing: border-box;
+    z-index: 999;
 }
 
 ul {
@@ -27,7 +32,7 @@ ul {
 .nx-title {
     color: $darkred;
     font-weight: bold;
-    font-size: $font-title;
+    @include font-size-mixin(25px);
 }
 
 .nx-sub-title {
@@ -35,10 +40,4 @@ ul {
     color: $black;
     font-weight: bold;
     margin: 10px 0;
-}
-
-.nx-md-text {
-    color: $gray;
-    font-weight: bold;
-    font-size: $font-xs;
 }

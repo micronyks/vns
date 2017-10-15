@@ -1,11 +1,67 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+
+    <div class="container-fluid">
+        <div class="col-xs-1 nx-bars" (click)="sidenav.toggle()"> <i class="fa fa-bars" aria-hidden="true"></i> </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+
+                </li>
+                <li>
+                    <a routerLink="/home" (click)="sidenav.toggle()" routerLinkActive="active" class="navbar-brand">VNS</a>
+                </li>
+                <li>
+                    <a routerLink="/resume" (click)="sidenav.toggle()" routerLinkActive="active" class="nav-item nav-link">Resume</a>
+                </li>
+                <li>
+                    <a routerLink="/resume" (click)="sidenav.toggle()" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right nx-right-navbar">
+                <li>
+                    <a href="https://stackoverflow.com/users/3751711/micronyks">
+                        <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/nikhil-shah-21a53665/">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/micronyks">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+
+
 <mat-sidenav-container class="nx-sidenav-container">
-
-
-    <mat-sidenav #sidenav mode="side" position="start" class="nx-sidenav-left">
+    <mat-sidenav #sidenav mode="{{windowWidth>767?'side':'over'}}" position="start" class="nx-sidenav-left">
         <div class="container-fluid boxsizing">
             <div class="row">
                 <div class="col-12">
-                    <div class="text-right"><a routerLink="/home" routerLinkActive="true"><span><i class="fa fa-home" aria-hidden="true"></i></span></a></div>
+                    <!-- <div class="text-right"><a routerLink="/home" routerLinkActive="true"><span><i class="fa fa-home" aria-hidden="true"></i></span></a></div> -->
                     <div class="text-center">
                         <!-- <img class="nx-author-img" src="./assets/Photos/Nikhil_Photo.jpg"/> -->
                         <img class="nx-author-img" src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" />
@@ -14,14 +70,14 @@
                         Nikhil Shah
                     </div>
 
-                    <div class="text-center nx-sub-title">About me</div>
                     <ul>
                         <li class="nx-md-text">Contributor in Stackoverflow</li>
                         <li class="nx-md-text">One of top rankers for Angular community</li>
                         <li class="nx-md-text"><a href="https://stackoverflow.com/users/3751711/micronyks">StackOverflow Profile</a></li>
                         <li class="nx-md-text"><a href="https://github.com/micronyks">GitHub Profile</a></li>
                         <li class="nx-md-text"><a href="https://www.linkedin.com/in/nikhil-shah-21a53665/">LinkedIn Profile</a></li>
-                        <li class="nx-md-text"><a routerLink="/resume" routerLinkActive="active">Resume</a></li>
+                        <li class="nx-md-text"><a routerLink="/resume" (click)="sidenav.toggle()" routerLinkActive="active">Resume</a></li>
+                        <li class="nx-md-text"><a routerLink="/contact" (click)="sidenav.toggle()" routerLinkActive="active">Contact</a></li>
 
                     </ul>
                 </div>
@@ -31,40 +87,12 @@
 
 
 
-    <div class="container-fluid boxsizing">
-        <div class="row">
-            <div class="col-12 text-center">
-                <button type="button" md-button (click)="sidenav.toggle()">
-            Open sidenav
-            </button>
-            </div>
-            <div class="col-12">
-                <header>
-                    <div class="header-banner">
-                        <a href="/" class="logo"></a>
-
-                        <h1>Visit Finland</h1>
-
-                    </div>
-                    <div class="clear"></div>
-                    <nav #nav>
-                        <ul>
-                            <li><a href="/archive">Archive</a></li>
-                            <li><a href="/events">Events</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </header>
-
-
-
-
-            </div>
-
-            <div class="col-12">
-                <router-outlet></router-outlet>
-            </div>
-
+    <div class="">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+        <div>
+            <nx-footer></nx-footer>
         </div>
     </div>
 

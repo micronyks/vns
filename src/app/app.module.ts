@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Router,Routes, RouterModule} from '@angular/router';
+
+
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './common/modules/core/core.module';
@@ -10,9 +13,10 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContainerComponent } from './components/container/container.component';
+import { ContactComponent } from './components/contact/contact.component';
+
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -21,15 +25,19 @@ import { ContainerComponent } from './components/container/container.component';
     AppComponent,
     ResumeComponent,
     HomeComponent, 
-    PagenotfoundComponent, HeaderComponent, FooterComponent, ContainerComponent
+    PagenotfoundComponent, FooterComponent, ContactComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    RouterModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDpVrD7HCGb4nhUtr9WZwO9ARo6OfboLuY'
+    })
   ],
   providers: [{ provide: Window, useValue: window }],
   bootstrap: [AppComponent]

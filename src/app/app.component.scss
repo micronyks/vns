@@ -4,133 +4,78 @@ nx-root {
     display: block;
     margin-left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-header {
-    height: 360px;
-    z-index: 10;
+.navbar {
+    height: 40px;
+    margin-bottom: 0;
 }
 
-.header-banner {
-    background-color: #333;
-    background-image: url('https://37.media.tumblr.com/8b4969985e84b2aa1ac8d3449475f1af/tumblr_n3iftvUesn1snvqtdo1_1280.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 300px;
-}
-
-header .logo {
-    background-color: transparent;
-    background-image: url('http://www.futhead.com/static//img/14/clubs/1887.png');
-    background-position: center top;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 72px;
-    height: 256px;
-    width: 256px;
-}
-
-header h1 {
-    position: absolute;
-    top: 72px;
-    left: 240px;
-    color: #fff;
-}
-
-.fixed-header {
-    position: fixed;
+mat-sidenav {
+    position: fixed !important;
+    margin-top: 50px;
     top: 0;
     left: 0;
-    width: 100%;
+    background: $lightblack !important;
+    height: calc(100%);
+    z-index: 99;
+    padding-top: 70px;
 }
 
-nav {
-    width: 100%;
-    height: 60px;
-    background: #292f36;
-    postion: fixed;
-    z-index: 10;
+.mat-drawer-transition .mat-drawer-content {
+    z-index: 1;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding-left: 0;
-    text-align: right;
-    width: 960px;
-    max-width: 100%;
+.fa-bars {
+    font-size: 20px !important;
+    opacity: .8;
 }
 
-nav ul li {
-    display: inline-block;
-    line-height: 60px;
-    margin-left: 10px;
+.fa-bars:hover {
+    opacity: 1;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #a9abae;
+.nx-bars {
+    color: $white;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-/* demo */
-
-.content {
-    width: 960px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding-top: 60px;
-}
-
-article {
-    width: 720px;
-    float: left;
-}
-
-article p:first-of-type {
-    margin-top: 0;
-}
-
-aside {
-    width: 120px;
-    float: right;
-}
-
-aside img {
-    max-width: 100%;
-}
-
-body {
-    color: #292f36;
-    font-family: helvetica;
-    line-height: 1.6;
-}
-
-
-/* resets */
-
-body {
-    margin: 0px;
-    padding: 0px;
+.nx-bars:hover {
+    cursor: pointer;
 }
 
 .nx-sidenav-container {
-    min-height: 100%;
+    margin-top: 49px;
     width: 100%;
-    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.5);
     .nx-sidenav-left {
         display: flex;
         flex-direction: column;
         width: 300px;
-        box-shadow: 10px 10px 5px $gray;
         .nx-author-img {
             height: 200px;
             width: 200px;
             // border-radius: 50%;
         }
+    }
+    .headerClass {}
+    .nx-md-text,
+    .nx-md-text a {
+        color: $gray !important;
+        font-weight: bold;
+        font-size: $font-xs;
+    }
+    .nx-md-text a:hover {
+        // text-decoration: none;
+    }
+}
+
+.nx-right-navbar {
+    li a {
+        padding: 15px 8px !important;
     }
 }
