@@ -31,6 +31,7 @@ import {
   style,
   keyframes
 } from '@angular/animations';
+import { ModalComponent } from '../../common/components/modal/modal.component';
 
 @Component({
   selector: 'nx-home',
@@ -75,9 +76,9 @@ import {
   ]
 })
 export class HomeComponent implements OnInit {
-
+  @ViewChild(ModalComponent) public readonly modal: ModalComponent;
   state: string;
-  technolgoies: Technology[];
+  technolgoies: Technology[]; 
   items: any[];
   technologyDivHeight:number;
 
@@ -213,6 +214,11 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit() {
 
+  }
+
+  openmodal(){
+    debugger;
+    this.modal.show();
   }
 
 

@@ -17,20 +17,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ResumeComponent,
-    HomeComponent, 
-    PagenotfoundComponent, FooterComponent, ContactComponent
-  ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule, 
     RouterModule,
     AppRoutingModule,
     CoreModule,
@@ -39,6 +35,13 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyDpVrD7HCGb4nhUtr9WZwO9ARo6OfboLuY'
     })
   ],
+  declarations: [
+    AppComponent,
+    ResumeComponent,
+    HomeComponent, 
+    PagenotfoundComponent, FooterComponent, ContactComponent
+  ],
+  
   providers: [
     { provide: Window, useValue: window },
     Location, 

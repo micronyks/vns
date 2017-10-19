@@ -8,7 +8,11 @@ import {
   trigger, transition, animate,
   style, state
 } from '@angular/core';
-@Component( {
+import { ModalComponent } from '../../common/components/modal/modal.component';
+
+
+
+@Component({
 selector:'nx-resume', 
 //    encapsulation:ViewEncapsulation.None,
 templateUrl:'./resume.component.html', 
@@ -31,66 +35,61 @@ animations: [
   ])
 ]
 })
-export class ResumeComponent implements OnInit {
-//token: Observable<string>;
 
+
+
+
+export class ResumeComponent {
+//token: Observable<string>;
+@ViewChild(ModalComponent) public readonly modal: ModalComponent;
 @HostBinding('@routeAnimation') get routeAnimation() {
   return true;
 }
 
 @ViewChild('print')printElement:ElementRef; 
-constructor(private router:Router, private route:ActivatedRoute, private sharedService:SharedService ) {
-// router.events.subscribe(event => {
-//     if (event instanceof NavigationEnd) {
-//         const tree = router.parseUrl(router.url);
-//         if (tree.fragment) {
-//       const element = document.querySelector("#" + tree.fragment);
-//       debuggerdebugger
-	  //       if (element) { element.scrollIntoView(element); }
-    //         }
-    //      }
-    // });
-   // this.scrollToAnchor('anchor', 100)  
+
+
+  constructor(private router:Router, private route:ActivatedRoute, private sharedService:SharedService ) {
+    console.log('resume component')
   }
 
 
-ngOnInit() {
-this.sharedService.scrollToAnchor(); 
-// Capture the session ID if available
 
-// Capture the fragment if available
-// this.token = this.route
-//   .fragment
-//   .map(fragment => fragment || 'None');
-}
 
-printResume() {
-let printContents, popupWin;
-    printContents = document.getElementById('print').innerHTML;
-    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=600');
-    popupWin.document.open();
-    popupWin.document.write(`
-      <html>
-        <head>
-          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <title>Print tab</title>
-          <style>
-            .lightBlue {
-              background-color: lightblue !important;
-            }
+  ngAfterViewInit(){
+    setTimeout(()=> {
+      this.modal.show(); 
+    }, 1000);
+      
+  }
 
-            @media print {
+  printResume() {
+    let printContents, popupWin;
+      printContents = document.getElementById('print').innerHTML;
+      popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=600');
+      popupWin.document.open();
+      popupWin.document.write(`
+        <html>
+          <head>
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <title>Print tab</title>
+            <style>
               .lightBlue {
                 background-color: lightblue !important;
-                -webkit-print-color-adjust: exact;
               }
-            }
-          </style>
-        </head>
-    <body onload="window.print();window.close()">${printContents}</body>
-      </html>`
-    );
-    popupWin.document.close();
-}
+
+              @media print {
+                .lightBlue {
+                  background-color: lightblue !important;
+                  -webkit-print-color-adjust: exact;
+                }
+              }
+            </style>
+          </head>
+      <body onload="window.print();window.close()">${printContents}</body>
+        </html>`
+      );
+      popupWin.document.close();
+  }
 }
