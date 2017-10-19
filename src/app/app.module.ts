@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {Router,Routes, RouterModule} from '@angular/router';
-
+import {Location, LocationStrategy, PathLocationStrategy,HashLocationStrategy} from '@angular/common';
 
 
 import { AppComponent } from './app.component';
@@ -39,7 +39,11 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyDpVrD7HCGb4nhUtr9WZwO9ARo6OfboLuY'
     })
   ],
-  providers: [{ provide: Window, useValue: window }],
+  providers: [
+    { provide: Window, useValue: window },
+    Location, 
+    {provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })  
 export class AppModule { }

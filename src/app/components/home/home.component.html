@@ -3,7 +3,7 @@
         <div class="header-banner" [@myAnimation]="state">
             <div class="col-xs-12  col-md-2 technology" [ngStyle]="{'height.px': technologyDivHeight}" *ngFor="let tech of technolgoies">
                 <img class="col-xs-12" src="{{tech.imageUrl}}">
-                <span>{{tech.name}}</span>
+                <span class="col-xs-12">{{tech.name}}</span>
             </div>
         </div>
     </div>

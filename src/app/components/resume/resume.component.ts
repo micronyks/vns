@@ -3,14 +3,40 @@ import {ActivatedRoute, Router, NavigationEnd }from '@angular/router';
 import {Observable }from 'rxjs/Observable'; 
 import 'rxjs/add/operator/map'; 
 import {SharedService }from '../../common/services/shared.service'; 
+import {
+  HostBinding,
+  trigger, transition, animate,
+  style, state
+} from '@angular/core';
 @Component( {
 selector:'nx-resume', 
 //    encapsulation:ViewEncapsulation.None,
 templateUrl:'./resume.component.html', 
-styleUrls:['./resume.component.scss']
+styleUrls:['./resume.component.scss'],
+animations: [
+  trigger('routeAnimation', [
+    transition(':enter', [
+      style({
+        opacity: 0,
+        transform: 'translateY(-100%)'
+      }),
+      animate('1s ease-in-out')
+    ]),
+    transition(':leave', [
+      animate('1s ease-in-out', style({
+        opacity: 0,
+        transform: 'translateY(100%)'
+      }))
+    ])
+  ])
+]
 })
 export class ResumeComponent implements OnInit {
 //token: Observable<string>;
+
+@HostBinding('@routeAnimation') get routeAnimation() {
+  return true;
+}
 
 @ViewChild('print')printElement:ElementRef; 
 constructor(private router:Router, private route:ActivatedRoute, private sharedService:SharedService ) {
@@ -41,7 +67,7 @@ this.sharedService.scrollToAnchor();
 printResume() {
 let printContents, popupWin;
     printContents = document.getElementById('print').innerHTML;
-    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=600');
     popupWin.document.open();
     popupWin.document.write(`
       <html>
