@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -39,13 +40,14 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ResumeComponent,
     HomeComponent, 
-    PagenotfoundComponent, FooterComponent, ContactComponent
+    PagenotfoundComponent, FooterComponent, ContactComponent, AboutComponent
   ],
   
   providers: [
     { provide: Window, useValue: window },
     Location, 
-    {provide: LocationStrategy, useClass: HashLocationStrategy }
+    {provide: LocationStrategy, useClass: HashLocationStrategy },
+    
   ],
   bootstrap: [AppComponent]
 })  

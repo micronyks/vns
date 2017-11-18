@@ -12,7 +12,11 @@
 </head>
 
 <body>
-    <nx-root></nx-root>
+    <nx-root>
+        <div class="loaderContainer" *ngIf="sharedService.loader">
+            <div class="loader"></div>
+        </div>
+    </nx-root>
 </body>
 
 </html>

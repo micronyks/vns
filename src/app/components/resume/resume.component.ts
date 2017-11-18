@@ -53,14 +53,20 @@ export class ResumeComponent {
     console.log('resume component')
   }
 
-
-
+  ngOnInit(){
+    this.sharedService.hideLoader();
+  }
 
   ngAfterViewInit(){
     setTimeout(()=> {
       this.modal.show(); 
     }, 1000);
       
+  }
+
+  ngDestroy()
+  {
+    this.sharedService.showLoader();
   }
 
   printResume() {

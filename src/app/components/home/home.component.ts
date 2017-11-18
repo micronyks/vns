@@ -40,6 +40,11 @@ import { ModalComponent } from '../../common/components/modal/modal.component';
   animations: [
     trigger('myAnimation', [
       transition('*=>enter', [
+
+        
+       
+
+
         query('.technology', style({
           opacity: 0
         }), {
@@ -70,9 +75,17 @@ import { ModalComponent } from '../../common/components/modal/modal.component';
         ]), {
           optional: true
         })
+      ]),
+      transition(':leave', [
+        animate('1s ease-in-out', style({
+          opacity: 0,
+          transform: 'translateY(100%)'
+        }))
       ])
 
     ])
+
+    
   ]
 })
 export class HomeComponent implements OnInit {

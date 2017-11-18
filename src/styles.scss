@@ -31,8 +31,9 @@ ul {
 }
 
 .nx-title {
-    color: $darkred;
+    color: $darkred !important;
     font-weight: bold;
+    margin: 10px 0;
     @include font-size-mixin(25px);
 }
 
@@ -41,4 +42,56 @@ ul {
     color: $black;
     font-weight: bold;
     margin: 10px 0;
+}
+
+//loader
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    border: none;
+}
+
+a.active {
+    border: none;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+.loader {
+    /*border: 16px solid #f3f3f3;*/
+    border: 16px solid $gray;
+    /* Light grey */
+    border-top: 16px solid $darkred;
+    border-bottom: 16px solid $darkred;
+    /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

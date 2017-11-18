@@ -6,16 +6,18 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ResumeComponent } from './components/resume/resume.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AuthGuardService } from './common/services/authservice.service';
-const appRoutes: Routes = [
-  { 
-    path: 'resume', 
-    component: ResumeComponent,
-    canActivate: [AuthGuardService],
-  },
-  { path: 'home', component: HomeComponent },
+import { AboutComponent } from './components/about/about.component';
+export const appRoutes: Routes = [
+  // { 
+  //   path: 'resume', 
+  //   component: ResumeComponent,
+  //   canActivate: [AuthGuardService],
+  // },
+  {path: 'home', component: HomeComponent },
   {path:'contact', component:ContactComponent},
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PagenotfoundComponent }
+  {path:'about', component:AboutComponent},
+  {path:'',   redirectTo: '/home', pathMatch: 'full' },
+  {path:'**', component: PagenotfoundComponent }
 ];
 
 @NgModule({   

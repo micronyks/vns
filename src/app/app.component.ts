@@ -13,46 +13,34 @@ export class AppComponent {
   windowHeight:number;
   technologyDivHeight:number;
   windowWidth:number;
+  title = 'nx';
+
   @ViewChild('nav') navEle:ElementRef;
-
   @ViewChild('sidenav') sidenav;
-
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event:any) {
   }
   
-  constructor(private rd: Renderer2,
-    private router: Router,
-    // private route: ActivatedRouteSnapshot,
-    // private state: RouterStateSnapshot,
-    private sharedService: SharedService) {
-      this.windowWidth=window.innerWidth;
+  constructor(private sharedService: SharedService) {
+    this.windowWidth=window.innerWidth;
     this.windowHeight=window.innerHeight;
     this.technologyDivHeight = (window.innerHeight - 60) / 4;
-    console.log('window width is '+ this.windowWidth);
   }
 
-  title = 'nx';
-
-  
-  ngOnInit(){}
+  ngOnInit(){
+    this.sharedService.hideLoader();
+  }
 
   ngAfterViewInit(){
-      
+    
+    setTimeout(()=>{
+      this.sidenav.opened=true;  
+    }, 100);
+    
   }
 
-
-  navigateTo(to: string) {
-    // let navigationExtras: NavigationExtras = {
-    //   fragment: 'anchor '
-    // };
-    if (to != "home") {
-      this.sharedService.fragment = "anchor";
-    } else {
-      this.sharedService.fragment = "headerAnchor";
-    }
-    this.router.navigate([to]);
-
+  ngDestroy(){
+    this.sharedService.showLoader();
   }
 
 }

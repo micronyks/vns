@@ -4,8 +4,16 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   public fragment:string;
   private element:any;
+  loader:boolean=true;
+
   constructor() { }
 
+  public showLoader():void{
+    this.loader=true;
+  }
+  public hideLoader():void{
+    this.loader=false;
+  }
 
   public scrollToAnchor(): void {
     if(this.fragment){
