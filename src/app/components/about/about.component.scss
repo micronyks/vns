@@ -17,7 +17,7 @@ mat-card {
 
 mat-expansion-panel {
     font-family: 'Lato', sans-serif !important;
-    background: $lightblack !important;
+    
     box-shadow: none !important;
 }
 
@@ -34,6 +34,10 @@ mat-expansion-panel-header {
 .mat-expansion-panel-body {
     margin: 20px 0 !important;
     font-family: 'Lato', sans-serif !important;
+}
+
+.mat-expansion-panel-header{
+    background: $lightblack !important;
 }
 
 .mat-expansion-panel-header-title {

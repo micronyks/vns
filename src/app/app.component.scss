@@ -60,7 +60,6 @@ mat-sidenav {
     .sidebar-logo {
         color: $darkred !important;
         margin-bottom: 30px;
-        margin-top: -25px;
         @include font-size-mixin(30px);
         font-weight: bold;
     }
