@@ -4,42 +4,39 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'nx-root',
-  encapsulation:ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  windowHeight:number;
-  technologyDivHeight:number;
-  windowWidth:number;
+  windowHeight: number;
+  technologyDivHeight: number;
+  windowWidth: number;
   title = 'nx';
 
-  @ViewChild('nav') navEle:ElementRef;
+  @ViewChild('nav') navEle: ElementRef;
   @ViewChild('sidenav') sidenav;
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event:any) {
+      onWindowScroll($event: any) {
   }
-  
-  constructor(private sharedService: SharedService) {
-    this.windowWidth=window.innerWidth;
-    this.windowHeight=window.innerHeight;
+
+  constructor(public sharedService: SharedService) {
+    this.windowWidth = window.innerWidth;
+    this.windowHeight = window.innerHeight;
     this.technologyDivHeight = (window.innerHeight - 60) / 4;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.sharedService.hideLoader();
   }
 
-  ngAfterViewInit(){
-    
-    setTimeout(()=>{
-      this.sidenav.opened=true;  
-    }, 100);
-    
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.sidenav.opened = true;
+      }, 100);
   }
 
-  ngDestroy(){
+  ngDestroy() {
     this.sharedService.showLoader();
   }
 

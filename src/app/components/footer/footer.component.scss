@@ -42,3 +42,10 @@
         @include color-mixin($gray);
     }
 }
+
+@media only screen and (max-device-width: 767px) {
+    /* Styles */
+    .nx-footer{
+        @include font-size-mixin(10px); 
+    }
+}

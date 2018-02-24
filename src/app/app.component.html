@@ -1,10 +1,16 @@
 <div class="loaderContainer" *ngIf="sharedService.loader">
-    <div class="loader"></div>
+    <div class="loader-screen">
+        <div class="col-xs-12  col-md-2 blinking" >
+            <img class="col-xs-12" src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg">
+        </div>
+    </div>
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-        <div class="col-xs-1 nx-bars" (click)="sidenav.toggle()"> <i class="fa fa-bars" aria-hidden="true"></i> </div>
+        <div class="col-xs-1 nx-bars" [ngClass]="{'nx-roate-logo':sidenav.opened,'nx-deroate-logo':!sidenav.opened}"   (click)="sidenav.toggle()">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </div>
         <div class="navbar-header">
             <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                   <span class="sr-only">Toggle navigation</span>
@@ -60,7 +66,6 @@
 <mat-sidenav-container class="nx-sidenav-container">
     <mat-sidenav #sidenav mode="{{windowWidth>767?'side':'over'}}" position="start" class="nx-sidenav-left">
         <div class="container-fluid boxsizing">
-            <div class="col-xs-12">
                 <div class="text-center sidebar-logo">
                     <a routerLink="/home" (click)="sidenav.toggle()" routerLinkActive="true">
                         <span class="sidebar-logo">Nikhil Shah</span>
@@ -76,17 +81,26 @@
 
                 <ul class="author-information">
                     <div class="col-xs-12">
-                        <li class="nx-md-text">Contributor in Stackoverflow</li>
-                        <li class="nx-md-text">One of top rankers for Angular community</li>
-                        <li class="nx-md-text"><a href="https://stackoverflow.com/users/3751711/micronyks">StackOverflow Profile</a></li>
-                        <li class="nx-md-text"><a href="https://github.com/micronyks">GitHub Profile</a></li>
-                        <li class="nx-md-text"><a href="https://www.linkedin.com/in/nikhil-shah-live/">LinkedIn Profile</a></li>
+                        <li class="description">Contributor in Stackoverflow</li>
+                        <li class="description">One of top rankers in Stackoverflow for Angular community</li>
+                        <li class="nx-md-text">
+                            <a href="https://stackoverflow.com/users/3751711/micronyks">StackOverflow Profile</a>
+                        </li>
+                        <li class="nx-md-text">
+                            <a href="https://github.com/micronyks">GitHub Profile</a>
+                        </li>
+                        <li class="nx-md-text">
+                            <a href="https://www.linkedin.com/in/nikhil-shah-live/">LinkedIn Profile</a>
+                        </li>
                         <!-- <li class="nx-md-text"><a routerLink="/resume" (click)="sidenav.toggle()" routerLinkActive="active">Resume</a></li> -->
-                        <li class="nx-md-text"><a routerLink="/contact" (click)="sidenav.toggle()" routerLinkActive="active">Contact</a></li>
-                        <li class="nx-md-text"><a routerLink="/about" (click)="sidenav.toggle()" routerLinkActive="active">About</a></li>
+                        <li class="nx-md-text">
+                            <a routerLink="/contact" (click)="sidenav.toggle()" routerLinkActive="active">Contact</a>
+                        </li>
+                        <li class="nx-md-text">
+                            <a routerLink="/about" (click)="sidenav.toggle()" routerLinkActive="active">About</a>
+                        </li>
                     </div>
                 </ul>
-            </div>
         </div>
     </mat-sidenav>
 

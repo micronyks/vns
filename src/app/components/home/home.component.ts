@@ -6,7 +6,7 @@ import {
   HostListener,
   ViewChild,
   ElementRef,
-  Renderer2
+  Renderer2, VERSION
 } from '@angular/core';
 import {
   CanActivate,
@@ -30,7 +30,7 @@ import {
   animate,
   style,
   keyframes
-} from '@angular/animations';
+  } from '@angular/animations';
 import { ModalComponent } from '../../common/components/modal/modal.component';
 
 @Component({
@@ -40,21 +40,13 @@ import { ModalComponent } from '../../common/components/modal/modal.component';
   animations: [
     trigger('myAnimation', [
       transition('*=>enter', [
-
-        
-       
-
-
         query('.technology', style({
           opacity: 0
         }), {
           optional: true
         }),
-
         query('.technology', stagger('300ms', [
-
           // animate('1s ease',style({opacity:1, transform: 'rotate(360deg)'}))
-
           animate('.5s', keyframes([
             style({
               opacity: 0,
@@ -84,8 +76,6 @@ import { ModalComponent } from '../../common/components/modal/modal.component';
       ])
 
     ])
-
-    
   ]
 })
 export class HomeComponent implements OnInit {
@@ -119,7 +109,7 @@ export class HomeComponent implements OnInit {
     console.log(this.technologyDivHeight);
 
     this.technolgoies = [{
-      name: "Angular 4.x",
+      name: `Angular ${VERSION.full}`,
       navigationUrl: 'abc',
       imageUrl: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg'
     }, {
@@ -151,29 +141,29 @@ export class HomeComponent implements OnInit {
       navigationUrl: 'abc',
       imageUrl: 'http://www.howardism.org/Technical/Learning/web-trifecta.svg'
     }, {
-      name: "node",
+      name: "Node",
       navigationUrl: 'abc',
-      imageUrl: 'https://openfin.co/wp-content/uploads/2015/05/nodejs_logo.png'
+      imageUrl: 'https://cosmic-s3.imgix.net/ebf6d330-ded9-11e6-8252-d9f1e786360b-node.svg'
     }, {
-      name: "scss",
+      name: "SCSS",
       navigationUrl: 'abc',
       imageUrl: 'http://sass-lang.com/assets/img/styleguide/color-1c4aab2b.png'
     }, {
-      name: "bootstrap",
+      name: "Bootstrap",
       navigationUrl: 'abc',
       imageUrl: 'http://withinpixels.com/assets/images/fuse/bootstrap.png'
     }, {
-      name: "jasmine",
-      navigationUrl: 'abc',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Logo_jasmine.svg/1028px-Logo_jasmine.svg.png'
+        name: "Jasmine",
+        navigationUrl: 'abc',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Logo_jasmine.svg/1028px-Logo_jasmine.svg.png'
     }, {
-      name: "karma",
+      name: "Karma",
       navigationUrl: 'abc',
       imageUrl: 'https://avatars3.githubusercontent.com/u/3284117?v=4&s=400'
     }, {
-      name: ".net",
+      name: "NET",
       navigationUrl: 'abc',
-      imageUrl: 'https://www.santiagomontesinos.com/content/images/2016/03/netlogo.png'
+      imageUrl: 'http://new.iihtkalkaji.com/wp-content/uploads/2017/10/dotnet.png'
     }, {
       name: "Gulp",
       navigationUrl: 'abc',
@@ -187,11 +177,11 @@ export class HomeComponent implements OnInit {
       navigationUrl: 'abc',
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png'
     }, {
-      name: "npm",
+      name: "NPM",
       navigationUrl: 'abc',
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/640px-Npm-logo.svg.png'
     }, {
-      name: "skype",
+      name: "Skype",
       navigationUrl: 'abc',
       imageUrl: 'http://pngimg.com/uploads/skype/skype_PNG15.png'
     }, {
@@ -203,15 +193,15 @@ export class HomeComponent implements OnInit {
       navigationUrl: 'abc',
       imageUrl: 'http://freevectorlogo.net/wp-content/uploads/2016/10/paypal-logo-vector-400x400.png'
     }, {
-      name: "gmail",
+      name: "Gmail",
       navigationUrl: 'abc',
       imageUrl: 'https://image.flaticon.com/icons/png/512/281/281769.png'
     }, {
-      name: "zoom",
+      name: "Zoom",
       navigationUrl: 'abc',
       imageUrl: 'http://appyhour.io/wp-content/uploads/2015/04/zoom-logo.png'
     }, {
-      name: "teamviewer",
+      name: "Teamviewer",
       navigationUrl: 'abc',
       imageUrl: 'https://cdn2.iconfinder.com/data/icons/pack2-baco-flurry-icons-style/512/Team_Viewer.png'
     }, ]

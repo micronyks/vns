@@ -6,10 +6,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  visible:boolean=false;
-  model={};
-  private visibleAnimate = false;
-  showErrorMsg=false;
+  visible = false;
+  model = {};
+  public visibleAnimate = false;
+  showErrorMsg = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class ModalComponent implements OnInit {
   public show(): void {
     this.visible = true;
     setTimeout(() => {
-      this.visibleAnimate = true
+      this.visibleAnimate = true;
     });
   }
 
@@ -28,14 +28,11 @@ export class ModalComponent implements OnInit {
     setTimeout(() => this.visible = false, 300);
   }
 
-  checkPassword(password,event){
-    if(password=='nyks'){
+  checkPassword(password, event) {
+    if (password === 'nyks') {
       this.hide(event);
-    }
-    else{
-      this.showErrorMsg=true;
+    } else {
+      this.showErrorMsg = true;
     }
   }
-
-
 }

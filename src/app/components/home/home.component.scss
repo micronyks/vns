@@ -50,6 +50,7 @@ header {
     transform: scale(1.2);
     cursor: pointer;
     opacity: .3;
+    
 }
 
 .technology:hover span {
@@ -60,6 +61,8 @@ header {
     transform: all;
     height: 100%;
     width: 100%;
+    color: $light-blue !important;
+    font-weight: bold;
 }
 
 .header-banner {
@@ -76,6 +79,8 @@ header {
     flex-wrap: wrap;
     background: rgba(52, 58, 64, 1);
     overflow: hidden;
+    align-items: center;    
+    justify-content: center;
 }
 
 header .logo {
@@ -136,6 +141,8 @@ nav {
         flex-direction: column;
     }
     .technology {
+        width: 300px !important;    
+        height: 200px !important;
         flex-direction: column;
         img {
             padding: 20px 90px;
@@ -146,6 +153,10 @@ nav {
     }
 }
 
+@media only screen and (min-device-width: 767px) {
+    /* Styles */
+    
+}   
 
 /* Smartphones (landscape) ----------- */
 
@@ -165,6 +176,9 @@ nav {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Styles */
+    .technology {
+        height: 200px !important;
+    }
 }
 
 
@@ -172,6 +186,7 @@ nav {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     /* Styles */
+    
 }
 
 
@@ -199,6 +214,7 @@ nav {
 
 @media only screen and (min-width: 1224px) {
     /* Styles */
+    
 }
 
 

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Router,Routes, RouterModule} from '@angular/router';
-import {Location, LocationStrategy, PathLocationStrategy,HashLocationStrategy} from '@angular/common';
+import {Router, Routes, RouterModule} from '@angular/router';
+import {Location, LocationStrategy, PathLocationStrategy, HashLocationStrategy} from '@angular/common';
 
 
 import { AppComponent } from './app.component';

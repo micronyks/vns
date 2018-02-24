@@ -32,12 +32,14 @@ mat-sidenav {
     z-index: 1;
 }
 
-.fa-bars {
-    font-size: 20px !important;
+.fa-angle-double-right {
+    font-size: 30px !important;
+    font-weight: bold;
     opacity: .8;
+    color: $darkred;
 }
 
-.fa-bars:hover {
+.fa-angle-double-right {
     opacity: 1;
 }
 
@@ -53,6 +55,16 @@ mat-sidenav {
     cursor: pointer;
 }
 
+.nx-roate-logo{
+    transform: rotate(-180deg);
+    transition: all 1s;
+}
+
+.nx-deroate-logo{
+    transform: rotate(0deg);
+    transition: all 1s;
+}
+
 .nx-sidenav-container {
     margin-top: 49px;
     width: 100%;
@@ -60,7 +72,7 @@ mat-sidenav {
     .sidebar-logo {
         color: $darkred !important;
         margin-bottom: 30px;
-        @include font-size-mixin(30px);
+        @include font-size-mixin(25px);
         font-weight: bold;
     }
     .author-information {
@@ -75,9 +87,9 @@ mat-sidenav {
             justify-content: center;
             align-items: center;
             .nx-author-img {
-                height: 200px;
-                width: 200px;
-                background-size: 400px 350px;
+                height: 170px;
+                width: 170px;
+                background-size: 364px 309px;
                 // background-repeat: no-repeat;
                 //background-position: -179px -99px;
                 // border-radius: 50%;
@@ -91,15 +103,29 @@ mat-sidenav {
             }
         }
     }
-    .headerClass {}
-    .nx-md-text,
+    .author-information{
+        li:nth-child(n+3):not(:nth-last-child(-n)){
+            list-style-type: none;
+        }
+
+        li:nth-child(2){
+            border-bottom: 1px solid $light-blue;
+            margin-bottom: 5px;
+        }
+    }
+    .description{
+        color: $light-blue !important;
+        font-weight: bold;
+        font-size: $font-xs;
+    }
     .nx-md-text a {
-        color: $gray !important;
+        color: $light-blue !important;
         font-weight: bold;
         font-size: $font-xs;
     }
     .nx-md-text a:hover {
-        // text-decoration: none;
+         text-decoration: underline;
+         color:$darkred !important;
     }
 }
 

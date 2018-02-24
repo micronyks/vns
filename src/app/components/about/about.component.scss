@@ -26,14 +26,18 @@ mat-expansion-panel-header {
     font-family: 'Lato', sans-serif !important;
 }
 
-.mat-expansion-panel-content {
-    background: #f5f5f5 !important;
+.mat-expansion-panel{
+    background: $white  ;  
+}
+    .mat-expansion-panel-content {
+    background: #f5f5f5 !important;        
     font-family: 'Lato', sans-serif !important;
 }
 
 .mat-expansion-panel-body {
-    margin: 20px 0 !important;
+    margin: 10px 0 !important;
     font-family: 'Lato', sans-serif !important;
+    padding: 0 !important;
 }
 
 .mat-expansion-panel-header{

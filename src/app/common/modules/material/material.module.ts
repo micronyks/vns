@@ -39,7 +39,7 @@ import { MatButtonModule } from '@angular/material';
 import {MatSidenavModule} from '@angular/material';
 ////import {MdListModule} from '@angular2-material/list/list';
 //import {MdGridListModule} from '@angular2-material/grid -list/grid-list';
-import {MatCardModule,MatExpansionModule} from '@angular/material';
+import {MatCardModule, MatExpansionModule} from '@angular/material';
 //import {ModalOpenDirective} from './myDirective';
 const MATERIAL_MODULES = [
   MatButtonModule,
