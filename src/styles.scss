@@ -44,6 +44,10 @@ ul {
     margin: 10px 0;
 }
 
+
+
+
+
 //loader
 .loaderContainer {
     display: flex;
@@ -80,54 +84,15 @@ a:focus {
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    height: 200px;
-}
-
-.technology {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    height: 200px;
-   
-    
-    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    //overflow: hidden;
-    img {
-        height: inherit;
-        overflow: hidden;
+    height: 300px;
+    width:300px;
+    .loader-img{
+        height: 100%;
+        width: 100%;
         background-size: contain;
-        padding: 5px 30px;
-        transform-origin: 50% 50%;
-        transition: transform 2s linear;
+        background-image: url('https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg');
+        background-repeat: no-repeat;
     }
-    span {
-        /* Good thing we set a fallback color! */
-        font-family: sans-serif;
-        position: absolute;
-        display: none;
-        @include font-size-mixin(20px);
-        @include color-mixin($white);
-        transition: transform 1s linear;
-    }
-}
-
-.technology:hover img,
-.technology:focus img {
-    transform: scale(1.2);
-    cursor: pointer;
-    opacity: .3;
-}
-
-.technology:hover span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transform: all;
-    height: 100%;
-    width: 100%;
 }
 
 
@@ -199,5 +164,13 @@ a:focus {
     }
 }
 
+
+
+@media only screen and (max-device-width: 767px) {
+    .loader-screen{
+        height: 200px; 
+        width:200px;
+    }
+}
 
 

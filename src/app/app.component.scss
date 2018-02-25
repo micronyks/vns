@@ -25,7 +25,7 @@ mat-sidenav {
     background: $lightblack !important;
     height: calc(100%);
     z-index: 99;
-    padding-top: 70px;
+    padding-top: 60px;
 }
 
 .mat-drawer-transition .mat-drawer-content {
@@ -65,18 +65,24 @@ mat-sidenav {
     transition: all 1s;
 }
 
+.navbar-nav li a.active,
+.navbar-nav li a:hover{
+    color:$darkred !important;
+    font-weight: bold;
+}
+
 .nx-sidenav-container {
     margin-top: 49px;
     width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    // border: 1px solid rgba(0, 0, 0, 0.5);
     .sidebar-logo {
         color: $darkred !important;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         @include font-size-mixin(25px);
         font-weight: bold;
     }
     .author-information {
-        margin-top: 40px;
+        margin-top: 10px;
     }
     .nx-sidenav-left {
         display: flex;
@@ -90,10 +96,6 @@ mat-sidenav {
                 height: 170px;
                 width: 170px;
                 background-size: 364px 309px;
-                // background-repeat: no-repeat;
-                //background-position: -179px -99px;
-                // border-radius: 50%;
-                // border: 100px solid;
                 background-image: url('../assets/Photos/Nyks.png');
                 /* background-size: 400px 350px; */
                 background-repeat: no-repeat;
@@ -104,28 +106,35 @@ mat-sidenav {
         }
     }
     .author-information{
+        li{
+            padding: 3px;
+        }
         li:nth-child(n+3):not(:nth-last-child(-n)){
             list-style-type: none;
         }
-
+        li:nth-child(n+3):not(:nth-last-child(-n)) a{
+            color: $white !important;
+            font-weight: normal;
+            @include font-size-mixin(12px);
+        }
+        li:nth-child(n+3):not(:nth-last-child(-n)) a:hover{
+            color:$darkred !important;
+            font-weight: bold;
+        }
+        li:nth-child(n+3):not(:nth-last-child(-n)) a.active{
+            color:$darkred !important;
+            font-weight: bold;
+        }
         li:nth-child(2){
-            border-bottom: 1px solid $light-blue;
+            // border-bottom: 1px solid $gray;
             margin-bottom: 5px;
         }
+
     }
     .description{
         color: $light-blue !important;
         font-weight: bold;
         font-size: $font-xs;
-    }
-    .nx-md-text a {
-        color: $light-blue !important;
-        font-weight: bold;
-        font-size: $font-xs;
-    }
-    .nx-md-text a:hover {
-         text-decoration: underline;
-         color:$darkred !important;
     }
 }
 
