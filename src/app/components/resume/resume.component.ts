@@ -1,13 +1,12 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef }from '@angular/core'; 
+import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, HostBinding }from '@angular/core'; 
 import {ActivatedRoute, Router, NavigationEnd }from '@angular/router'; 
 import {Observable }from 'rxjs/Observable'; 
 import 'rxjs/add/operator/map'; 
 import {SharedService }from '../../common/services/shared.service'; 
 import {
-  HostBinding,
   trigger, transition, animate,
   style, state
-} from '@angular/core';
+} from '@angular/animations';
 import { ModalComponent } from '../../common/components/modal/modal.component';
 
 
