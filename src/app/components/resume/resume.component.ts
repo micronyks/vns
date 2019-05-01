@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, HostBinding }from '@angular/core'; 
 import {ActivatedRoute, Router, NavigationEnd }from '@angular/router'; 
-import {Observable }from 'rxjs/Observable'; 
-import 'rxjs/add/operator/map'; 
+import {Observable }from 'rxjs'; 
+ 
 import {SharedService }from '../../common/services/shared.service'; 
 import {
   trigger, transition, animate,

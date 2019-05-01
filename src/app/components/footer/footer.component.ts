@@ -7,11 +7,15 @@ import { Component, OnInit,VERSION } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   version:string;
+  year:number;
+
   constructor() {
-    this.version=`Angular! v${VERSION.full}`
+    this.version=`Angular v${VERSION.full}!`
    }
 
   ngOnInit() {
+    let d = new Date();
+    this.year = d.getFullYear();
   }
 
 }
